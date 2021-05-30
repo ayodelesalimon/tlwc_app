@@ -4,7 +4,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:tlwc_app/home.dart';
+import 'package:tlwc_app/hompage.dart';
 import 'package:tlwc_app/onboarding.dart';
+import 'package:tlwc_app/screen/webview_plug.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -45,7 +47,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
           // color: Colors.grey,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images/food.png'), fit: BoxFit.cover),
+                image: AssetImage('images/2.jpeg'), fit: BoxFit.cover),
           ),
           child: Column(
             children: [
@@ -70,7 +72,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
                             borderRadius: BorderRadius.circular(60),
                             color: index.isEven
                                 ? Colors.white
-                                : Colors.blue.withOpacity(0.5)),
+                                : Colors.orangeAccent.withOpacity(0.5)),
                       );
                     },
                   ),

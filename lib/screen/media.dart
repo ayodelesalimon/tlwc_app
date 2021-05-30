@@ -42,10 +42,10 @@ class _MoreScreenState extends State<MoreScreen> {
           ),
           SizedBox(height: 10),
           CardContainer(
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => WebViewPlug(url: "https://tlwc.faithpays.org/our-mission/", title: "Our Learship",)));
-            },
+            // onTap: () {
+            //   Navigator.push(
+            //       context, MaterialPageRoute(builder: (_) => WebViewPlug(url: "https://tlwc.faithpays.org/our-mission/", title: "Our Learship",)));
+            // },
             color: Colors.deepPurpleAccent,
             title: "OUR BELIEFS",
             // url: "https://tlwc.faithpays.org/our-mission/",
@@ -55,10 +55,10 @@ class _MoreScreenState extends State<MoreScreen> {
           CardContainer(
             color: Colors.blueGrey,
             title: "OUR PASTOR",
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => WebViewPlug(url: "https://tlwc.faithpays.org/our-leadership/", title: "Our Learship",)));
-            },
+            // onTap: () {
+            //   Navigator.push(
+            //       context, MaterialPageRoute(builder: (_) => WebViewPlug(url: "https://tlwc.faithpays.org/our-leadership/", title: "Our Learship",)));
+            // },
             // url: "https://tlwc.faithpays.org/our-leadership/",
             width: width,
           ),
