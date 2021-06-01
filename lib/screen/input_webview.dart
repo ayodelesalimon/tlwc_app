@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
-class WebViewPlug extends StatefulWidget {
-  //final String url, title;
+class InputWeb extends StatefulWidget {
+  final String url;
 
-  const WebViewPlug({Key key, }) : super(key: key);
+  const InputWeb({Key key, this.url}) : super(key: key);
   @override
-  _WebViewPlugState createState() => _WebViewPlugState();
+  _InputWebState createState() => _InputWebState();
 }
 
-class _WebViewPlugState extends State<WebViewPlug> {
+class _InputWebState extends State<InputWeb> {
  // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   // int _page = 0;
   // GlobalKey _bottomNavigationKey = GlobalKey();
   int selectedIndex = 0;
-  final flutterWebViewPlugin = FlutterWebviewPlugin();
+  final flutterInputWebin = FlutterWebviewPlugin();
   final Set<JavascriptChannel> jsChannels = [
     JavascriptChannel(
         name: 'Print',
@@ -27,7 +27,7 @@ class _WebViewPlugState extends State<WebViewPlug> {
   @override
   void dispose() {
     super.dispose();
-    flutterWebViewPlugin.dispose();
+    flutterInputWebin.dispose();
   }
 
   @override
@@ -42,7 +42,7 @@ class _WebViewPlugState extends State<WebViewPlug> {
          // backgroundColor: Colors.white,
           
             javascriptChannels: jsChannels,
-            url: 'https://tlwc.faithpays.org/',
+            url: widget.url,
             mediaPlaybackRequiresUserGesture: false,
             // appBar: AppBar(
             //   title: Text('TLWC'),

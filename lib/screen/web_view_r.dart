@@ -25,7 +25,7 @@ class _VWebState extends State<VWeb> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("hello"),),
+     // appBar: AppBar(title: Text("hello"),),
           body: Stack(
             children: [
           WebView(
