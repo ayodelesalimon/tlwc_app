@@ -1,27 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tlwc_app/screen/about/pastor.dart';
+import 'package:tlwc_app/screen/about/prayer.dart';
 import 'package:tlwc_app/util/style.dart';
 import 'package:tlwc_app/widgets/drawer.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-class ConnectScreen extends StatefulWidget {
+class MoreScreen extends StatefulWidget {
   @override
-  _ConnectScreenState createState() => _ConnectScreenState();
+  _MoreScreenState createState() => _MoreScreenState();
 }
 
-class _ConnectScreenState extends State<ConnectScreen> {
-  Future<void> _launchInBrowser(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
-        url,
-      );
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
- final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+class _MoreScreenState extends State<MoreScreen> {
+   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
  
-  @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
@@ -31,9 +22,24 @@ class _ConnectScreenState extends State<ConnectScreen> {
          drawer: NaviationDrawer(),
         endDrawerEnableOpenDragGesture: false,
         key: _scaffoldKey,
-      //  appBar: AppBar(),
+        // appBar: AppBar(
+        //   title: Text("TLWC"),
+        // ),
         body: Column(
           children: [
+            // Container(
+            //   height: height / 4,
+            //   width: width,
+
+            //   decoration: BoxDecoration(
+            //     // borderRadius: BorderRadius.circular(10),
+            //     image: DecorationImage(
+            //         image: AssetImage("images/home.jpeg"), fit: BoxFit.cover),
+            //     //border: Border.all(color: Colors.blueAccent)
+            //   ),
+            //   // child: Text("My Awesome Border"),
+            // ),
+
             Padding(
               padding: EdgeInsets.only(left: 16, right: 16),
               child: Row(
@@ -73,18 +79,6 @@ class _ConnectScreenState extends State<ConnectScreen> {
                 ],
               ),
             ),
-            // Container(
-            //   height: height / 4,
-            //   width: width /2,
-
-            //   decoration: BoxDecoration(
-            //     // borderRadius: BorderRadius.circular(10),
-            //     image: DecorationImage(
-            //         image: AssetImage("images/home.jpeg"), fit: BoxFit.cover),
-            //     //border: Border.all(color: Colors.blueAccent)
-            //   ),
-            //   // child: Text("My Awesome Border"),
-            // ),
 
             Container(
               height: 200,
@@ -103,44 +97,77 @@ class _ConnectScreenState extends State<ConnectScreen> {
               height: 10,
             ),
             Text(
-              "Connect With Us",
+              "ABOUT US",
               style: kHeadingText1,
             ),
             SizedBox(height: 10),
             CardContainer(
-              onTap: () {
-                _launchInBrowser('https://www.facebook.com/groups/185831016795/?ref=br_tf');
-              },
+              // onTap: () {
+              //   Navigator.push(
+              //       context, MaterialPageRoute(builder: (_) => WebViewPlug(url: "https://tlwc.faithpays.org/our-mission/", title: "Our Learship",)));
+              // },
               color: Colors.deepOrangeAccent,
-              title: "FACEBOOK",
+              title: "OUR BELIEFS",
+              // url: "https://tlwc.faithpays.org/our-mission/",
               width: width,
             ),
             SizedBox(height: 10),
             CardContainer(
-              onTap: () {
-                _launchInBrowser('http://instagram.com/tlwcca');
-              },
               color: Colors.blueGrey,
-              title: "INSTAGRAM",
+              title: "OUR PASTOR",
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => ProfileApp()));
+              },
+              // url: "https://tlwc.faithpays.org/our-leadership/",
               width: width,
             ),
             SizedBox(height: 10),
             CardContainer(
-              onTap: () {
-                _launchInBrowser('https://twitter.com/TLWCCA');
-              },
               color: Colors.deepOrangeAccent,
-              title: "TWITTER",
+              title: "OUR HISTORY",
+              // url: "https://tlwc.faithpays.org/services/church-history/",
               width: width,
             ),
             SizedBox(height: 10),
             CardContainer(
-              onTap: () {
-                _launchInBrowser("");
-              },
               color: Colors.blueGrey,
-              title: "ABOUT US",
+              title: "OUR MINISTRIES",
+              // url: "https://tlwc.faithpays.org/ministries/",
               width: width,
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => ContentScreen(
+                              imgUrl: "images/home.jpeg",
+                              titleName: "Our Ministries",
+                              urlTitle: "Ministries We Support",
+                              substitle:
+                                  "Are you seeking prayer? Let's pray for you",
+                              url: "https://tlwc.faithpays.org/ministries/",
+                            )));
+              },
+            ),
+            SizedBox(height: 10),
+            CardContainer(
+              color: Colors.deepOrangeAccent,
+              //url: "https://tlwc.faithpays.org/prayers-request/",
+              title: "PRAYER REQUEST",
+              width: width,
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => ContentScreen(
+                              imgUrl: "images/home.jpeg",
+                              titleName: "Prayer Request",
+                              urlTitle: "Submit A Prayer",
+                              substitle:
+                                  "Are you seeking prayer? Let's pray for you",
+                              url: "https://tlwc.faithpays.org/prayers-request/",
+                            )));
+              },
             )
           ],
         ),

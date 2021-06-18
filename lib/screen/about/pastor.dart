@@ -96,6 +96,7 @@ class ProfileApp extends StatelessWidget {
             ),
             Container(
               width: 300.00,
+              // ignore: deprecated_member_use
               child: RaisedButton(
                   onPressed: () {},
                   shape: RoundedRectangleBorder(

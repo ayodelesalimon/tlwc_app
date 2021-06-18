@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tlwc_app/home.dart';
-import 'package:tlwc_app/onboarding.dart';
-import 'package:tlwc_app/splash_screen.dart';
+import 'package:tlwc_app/widgets/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,12 +11,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     // title: 'Flutter Demo',
-      // theme: ThemeData(
-      
-      //   // is not restarted.
-      //   primarySwatch: Colors.white12,
-    // ),
       home: LoadingScreen(),
     );
   }

@@ -1,19 +1,12 @@
-import 'dart:io';
-
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tlwc_app/hompage.dart';
 import 'package:tlwc_app/screen/connect.dart';
-import 'package:tlwc_app/screen/donate.dart';
-import 'package:tlwc_app/screen/media.dart';
-import 'package:tlwc_app/screen/web_view.dart';
+import 'package:tlwc_app/screen/ministries.dart';
+import 'package:tlwc_app/screen/more.dart';
 import 'package:tlwc_app/screen/web_view_r.dart';
-import 'package:tlwc_app/screen/webview_plug.dart';
 import 'package:tlwc_app/widgets/drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'gridDashboard.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -26,6 +19,7 @@ class HomePageState extends State<HomePage> {
   // GlobalKey _bottomNavigationKey = GlobalKey();
   int selectedIndex = 0;
 
+  // ignore: unused_element
   Future _launchInBrowser() async {
   const url = "https://www.google.com";
     if (await canLaunch(url)) {
@@ -36,35 +30,17 @@ class HomePageState extends State<HomePage> {
       throw 'Could not launch $url';
     }
   }
-//   _launchURL() async {
-//   if (Platform.isIOS) {
-//     if (await canLaunch('youtube://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw')) {
-//       await launch('youtube://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw', forceSafariVC: false);
-//     } else {
-//       if (await canLaunch('https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw')) {
-//         await launch('https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw');
-//       } else {
-//         throw 'Could not launch https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw';
-//       }
-//     }
-//   } else {
-//     const url = 'https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw';
-//     if (await canLaunch(url)) {
-//       await launch(url);
-//     } else {
-//       throw 'Could not launch $url';
-//     }
-// }
    List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
    ConnectScreen(),
-    VWeb(),
+    Ministries(),
     VWeb(),
         // Text('Search Page',
         // style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
     MoreScreen(),
   ];
 
+  // ignore: unused_element
   void _onItemTapped(int index) {
     setState(() {
       selectedIndex = index;
@@ -150,10 +126,15 @@ class HomePageState extends State<HomePage> {
             selectedBackgroundColor: Colors.orange,
           ),
           FFNavigationBarItem(
-            iconData: Icons.money,
-            label: 'Donate',
+            iconData: Icons.add,
+            label: 'Ministries',
             selectedBackgroundColor: Colors.purple,
           ),
+          //  FFNavigationBarItem(
+          //   iconData: Icons.money,
+          //   label: 'Donate',
+          //   selectedBackgroundColor: Colors.purple,
+          // ),
           FFNavigationBarItem(
             iconData: Icons.perm_media,
             label: 'LiveStream',

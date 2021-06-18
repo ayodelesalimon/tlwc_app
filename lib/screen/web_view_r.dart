@@ -30,7 +30,7 @@ class _VWebState extends State<VWeb> {
             children: [
           WebView(
             key: _key,
-              initialUrl: "https://tlwc.faithpays.org/donations/together-it-is-possible-we-can-and-are-making-a-difference-4-2/?customize_changeset_uuid=cb67539b-1ff1-4938-b915-7df65f5cec94&customize_autosaved=on",
+              initialUrl: "https://www.facebook.com/groups/185831016795/?ref=br_tf",
               javascriptMode: JavascriptMode.unrestricted,
          onPageFinished: (finish) {
                 setState(() {

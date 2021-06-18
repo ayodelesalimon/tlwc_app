@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tlwc_app/widgets/gridDashboard.dart';
 import 'package:tlwc_app/widgets/drawer.dart';
 
-class HomeScreen extends StatefulWidget {
+class Ministries extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _MinistriesState createState() => _MinistriesState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _MinistriesState extends State<Ministries> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 10),
             // ignore: todo
             //TODO Grid Dashboard
-            GridDashboard()
+            GridDashboard2()
           ],
         ),
       ),
